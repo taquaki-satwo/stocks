@@ -1,0 +1,8 @@
+extends layout
+
+block content
+  input(type="number", name="stock_amount", required="true")
+  select(name="stock_model", required="true")
+    each model in stockModels
+      option(val="#{model.id}")= model.name
+  input(type="datetime", name="stock_time")
