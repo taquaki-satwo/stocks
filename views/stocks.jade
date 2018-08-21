@@ -1,8 +1,14 @@
 extends layout
 
 block content
-  input(type="number", name="stock_amount", required="true")
-  select(name="stock_model", required="true")
-    each model in stockModels
-      option(val="#{model.id}")= model.name
-  input(type="datetime", name="stock_time")
+  form(action="/stocks", method="post")
+    label(for="stock_amount") 在庫数:
+      input#stock_amount(type="number", name="stock_amount", required="true")
+    label(for="stock_model") 機種:
+      select#stock_model(name="stock_model", required="true")
+        option(disabled="true", selected="true") 機種を選択
+        each model in stockModels
+          option(val="#{model.id}")= model.name
+    label(for="stock_time")
+      input#stock_time(type="date", name="stock_time", required="true")
+    button(type="submit") 送信
