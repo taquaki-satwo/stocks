@@ -1,8 +1,38 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+html, body {
+  height: 100%;
 }
 
-a {
-  color: #00B7FF;
+.main {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.slideContents {
+  display: flex;
+  height: 100%;
+  width: 200%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: left 0.3s;
+}
+
+.slideContents.is-slide {
+  left: -100%;
+}
+
+.slideContents_child {
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+
+.slideContents_child .bar {
+  position: absolute;
+}
+
+.table-view-cell {
+ padding: 11px 15px;
 }

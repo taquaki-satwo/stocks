@@ -1,14 +1,42 @@
 extends layout
 
 block content
-  form(action="/stocks", method="post")
-    label(for="stock_amount") 在庫数:
-      input#stock_amount(type="number", name="stock_amount", required="true")
-    label(for="stock_model") 機種:
-      select#stock_model(name="stock_model", required="true")
-        option(disabled="true", selected="true") 機種を選択
-        each model in stockModels
-          option(val="#{model.id}")= model.name
-    label(for="stock_time")
-      input#stock_time(type="date", name="stock_time", required="true")
-    button(type="submit") 送信
+
+  .main
+    form.slideContents(action="/stocks", method="post")
+      input(type="hidden", name="stock_model")
+      .slideContents_child
+
+        header.bar.bar-nav 
+          h1.title 在庫入力
+          button(type="submit").btn.btn-link.pull-right 登録
+
+        .content
+          ul.table-view
+            li.table-view-cell.slideBtn
+              .navigate-right.modelName 機種
+
+          .table-view
+            .input-group 
+              .input-row
+                label(for="stock_amount") 在庫数
+                input#stock_amount(type="number", name="stock_amount", required="true", placeholder="0")
+
+          .table-view
+            .input-group 
+              .input-row
+                label(for="stock_time") 日付:
+                input#stock_time(type="date", name="stock_date", required="true")
+
+      .slideContents_child
+
+        header.bar.bar-nav 
+          button.btn.btn-link.btn-nav.pull-left.slideBtn
+            span.icon.icon-left-nav
+            | 在庫入力
+          h1.title 機種
+
+        .content
+          ul.table-view
+            each model in stockModels
+              li.table-view-cell.stockModel(data-id="#{model.id}")=model.name
