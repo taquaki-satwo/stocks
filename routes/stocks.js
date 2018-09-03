@@ -6,12 +6,12 @@ var Stock = require('../models/stock');
 var stockModels = [
   { id: 1, name: 'iPhone X 64GB スペースグレイ iOS10' },
   { id: 2, name: 'iPhone X 64GB シルバー iOS10' },
-  { id: 1, name: 'iPhone X 64GB スペースグレイ iOS11' },
-  { id: 2, name: 'iPhone X 64GB シルバー iOS11' },
-  { id: 3, name: 'iPhone X 256GB スペースグレイ iOS10' },
-  { id: 4, name: 'iPhone X 256GB シルバー iOS10' },
-  { id: 3, name: 'iPhone X 256GB スペースグレイ iOS11' },
-  { id: 4, name: 'iPhone X 256GB シルバー iOS11' }
+  { id: 3, name: 'iPhone X 64GB スペースグレイ iOS11' },
+  { id: 4, name: 'iPhone X 64GB シルバー iOS11' },
+  { id: 5, name: 'iPhone X 256GB スペースグレイ iOS10' },
+  { id: 6, name: 'iPhone X 256GB シルバー iOS10' },
+  { id: 7, name: 'iPhone X 256GB スペースグレイ iOS11' },
+  { id: 8, name: 'iPhone X 256GB シルバー iOS11' }
 ]
 
 router.get('/', function (req, res, next) {
